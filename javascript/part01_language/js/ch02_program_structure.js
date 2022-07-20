@@ -184,80 +184,226 @@
 //     }
 // }
 
+// ////// #######################################
+// ////// #### EXERCISE
+// ////// #######################################
+
+// // // Using for, while, and do-while loops, show a list of odd and even numbers
+// // // up to 100
+
+// // // Even - For loop
+
+// // for(let evenFor = 0; evenFor <= 100; evenFor++) {
+// //     if(evenFor % 2 === 0) {
+// //         console.log("evenFor: " + evenFor);
+// //     }
+// // }
+
+// // console.log();
+
+
+// // // Even - While loop
+// // let evenWhile = 0;
+// // while(evenWhile <= 100) {
+// //     if(evenWhile % 2 === 0) {
+// //         console.log("evenWhile: " + evenWhile);
+// //     }
+// //     evenWhile++;
+// // }
+
+// // console.log();
+
+// // // Even - Do-While loop
+// // let evenDo = 0;
+// // do {
+// //     if(evenDo % 2 === 0) {
+// //         console.log("evenDo: " + evenDo);
+// //     }
+// //     evenDo++;
+// // } while(evenDo <= 100);
+
+
+// // console.log();
+
+
+// // // Odd - For loop
+// // for(let oddFor = 0; oddFor <= 100; oddFor++) {
+// //     if((oddFor % 2 !== 0)) {
+// //         console.log("oddFor: " + oddFor);
+// //     }
+// // }
+
+// // console.log();
+
+
+// // // Odd - While loop
+// // let oddWhile = 0;
+
+// // while(oddWhile <= 100) {
+// //     if(oddWhile % 2 !== 0) {
+// //         console.log("oddWhile: " + oddWhile);
+// //     }
+// //     oddWhile++;
+// // }
+
+// // console.log();
+
+
+// // // Odd - Do-While loop
+
+// // let oddDo = 0;
+// // do {
+// //     if(oddDo % 2 !== 0) {
+// //         console.log("oddDo: " + oddDo);
+// //     }
+// //     oddDo++;
+// // } while(oddDo <= 100);
+
+
+// // // ####################################################################
+
+// // // // #### 2022-07-20
+
+// //// Updating Bindings Succintly
+// // counter = counter + 1;
+
+// // // JS shortcut
+
+// // counter += 1;
+// // counter -= 2;
+// // counter *= 3;
+// // counter /= 4;
+// // counter++;
+// // counter--;
+
+// for(let number = 0; number <= 12; number += 2) {
+//     console.log(number);
+// }
+
+// // 0
+// // 2
+// // 4
+// // ... up to 12 incremented 2 numbers
+
+
+// console.log();
+
+// //// Dispatching on a Value with switch
+
+// // // View in browser
+// // switch(prompt("What is the weather like?")) {
+// //     case "rainy":
+// //         console.log("Remember to bring an umbrella.");
+// //         break;
+// //     case "sunny":
+// //         console.log("Dress lightly");
+// //         break;
+// //     case "cloudy":
+// //         console.log("Go outside");
+// //         break;
+// //     default:
+// //         console.log("Unknown weather type!");
+// // }
+
+// console.log();
+
+// //// Capitalization
+
+// // // Note: binding names with several words
+
+// // fuzzylittleturtle
+// // fuzzy_little_turtle
+// // FuzzyLittleTurtle
+// // fuzzyLittleTurtle
+
+// //// Comments
+// // or /* */
+
+
 ////// #######################################
 ////// #### EXERCISE
 ////// #######################################
 
-// // Using for, while, and do-while loops, show a list of odd and even numbers
-// // up to 100
 
-// // Even - For loop
+//// ###### Looping a Triangle
 
-// for(let evenFor = 0; evenFor <= 100; evenFor++) {
-//     if(evenFor % 2 === 0) {
-//         console.log("evenFor: " + evenFor);
-//     }
-// }
+// Write a loop that makes seven calls to console.log() to
+// output the following triangle
+//
+// #
+// ##
+// ###
+// ####
+// #####
+// ######
+// #######
 
-// console.log();
+// Answer:
 
-
-// // Even - While loop
-// let evenWhile = 0;
-// while(evenWhile <= 100) {
-//     if(evenWhile % 2 === 0) {
-//         console.log("evenWhile: " + evenWhile);
-//     }
-//     evenWhile++;
-// }
-
-// console.log();
-
-// // Even - Do-While loop
-// let evenDo = 0;
-// do {
-//     if(evenDo % 2 === 0) {
-//         console.log("evenDo: " + evenDo);
-//     }
-//     evenDo++;
-// } while(evenDo <= 100);
-
-
-// console.log();
-
-
-// Odd - For loop
-for(let oddFor = 0; oddFor <= 100; oddFor++) {
-    if((oddFor % 2 !== 0)) {
-        console.log("oddFor: " + oddFor);
-    }
+for(let i = "#"; i.length < 8; i += "#") {
+    console.log(i);
 }
+
 
 console.log();
 
+//// ###### FizzBuzz
 
-// Odd - While loop
-let oddWhile = 0;
+// Write a program that uses console.log(); to print all the numbers from 1
+// to 100, with two exceptions. For numbers divisible by 3, print "Fizz"
+// instead of the number, and for numbers divisible by 5 (and not 3), 
+// print "Buzz" instead.
 
-while(oddWhile <= 100) {
-    if(oddWhile % 2 !== 0) {
-        console.log("oddWhile: " + oddWhile);
-    }
-    oddWhile++;
-}
-
-console.log();
-
-
-// Odd - Do-While loop
-
-let oddDo = 0;
+// Answer:
+let fizzBuzz = 1;
 do {
-    if(oddDo % 2 !== 0) {
-        console.log("oddDo: " + oddDo);
+    let output = "";
+    if(fizzBuzz % 3 == 0) {
+        output += "Fizz";
+    } else if(fizzBuzz % 5 == 0) {
+        output += "Buzz"
     }
-    oddDo++;
-} while(oddDo <= 100);
 
+    console.log(output || fizzBuzz);
 
-// // ####################################################################
+    fizzBuzz++;
+} while(fizzBuzz <= 100);
+
+console.log();
+
+//// ###### Chessboard
+
+// Write a program that creates a string that represents an
+// 8x8 grid, using new-line characters to separate lines.
+// At each position of the grid there is 
+// either a space or a # character. The characters
+// should form a chessboard.
+//
+// Passing this string to console.log() should show something like this:
+//
+//  # # # #
+// # # # #
+//  # # # #
+// # # # #
+//  # # # #
+// # # # #
+//  # # # #
+// # # # #
+
+// Answer
+
+let grid = 8;
+let board = "";
+
+for(let y = 0; y < grid; y++) {
+    for(x = 0; x < grid; x++) {
+        if((x + y) % 2 == 0) {
+            board += " ";
+        } else {
+            board += "#";
+        }
+    }
+    board += "\n";
+}
+
+console.log(board);
