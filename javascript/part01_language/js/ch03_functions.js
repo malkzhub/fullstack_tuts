@@ -71,7 +71,8 @@ const hummus = function(factor) {
             unit += "s";
         }
 
-        console.log(`${ingredientAmount} ${unit} ${name}`);
+        console.log(`${ingredientAmount} ${unit} ${name}`); // or
+        // console.log(ingredientAmount + " " + unit + " " + name); 
     };
 
     ingredient(1, "can", "chickpeas");
@@ -80,6 +81,71 @@ const hummus = function(factor) {
     ingredient(1, "clove", "garlic");
     ingredient(2, "tablespoon", "olive oil");
     ingredient(0.5, "teaspoon", "cumin");
-
-
 };
+
+console.log(hummus(13));
+
+console.log();
+
+//// Functions as Values
+
+// let launchMissiles = function() {
+//     missileSystem.launch("now");
+// };
+
+// if(safeMode) {
+//     launchMissiles = function() {/* do nothing */}
+// }
+
+
+//// Declaration of Notation
+
+function squareNotation(x) {
+    return x * x;
+}
+
+console.log(squareNotation(13)); // 169
+
+console.log();
+
+console.log("The future says:", future());
+
+function future() {
+    return "You'll never have flying cars";
+}
+
+console.log();
+
+//// Arrow functions
+
+const powerArrow = (base, exponent) => {
+    let result = 1;
+    for(let count = 0; count < exponent; count++) {
+        result *= base;
+    }
+
+    return result;
+};
+
+console.log(powerArrow(2, 8)); // 256
+
+console.log();
+
+// if there is only one parameter name, omit the parenthesis around the parameter list.
+
+const square1 = (x) => { return x * x };
+const square2 = x => x * x;
+
+console.log(square1(3));
+console.log(square2(4));
+
+console.log();
+
+// if arrow function has no parameters at all
+const horn = () => {
+    console.log("Toot");
+};
+
+horn();
+
+console.log();
