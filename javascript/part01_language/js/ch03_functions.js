@@ -87,6 +87,8 @@ console.log(hummus(13));
 
 console.log();
 
+// // #### 2022-07-23
+
 //// Functions as Values
 
 // let launchMissiles = function() {
@@ -96,6 +98,7 @@ console.log();
 // if(safeMode) {
 //     launchMissiles = function() {/* do nothing */}
 // }
+
 
 
 //// Declaration of Notation
@@ -149,3 +152,108 @@ const horn = () => {
 horn();
 
 console.log();
+
+// // #### 2022-07-24
+
+//// The Call Stack
+
+function greet(who) {
+    console.log("Hello " +  who);
+}
+greet("Harry");
+console.log("Bye");
+
+// // schematic flow of control
+
+// not in function
+//     in greet
+//         in console.log
+//     in greet
+// not in function
+//     in console.log
+// not in function
+
+console.log();
+
+function chicken() {
+    return egg();
+}
+
+function egg() {
+    return chicken();
+}
+
+// console.log(chicken() + " came first"); // Uncaught RangeError: Maximum stack size exceeded
+
+
+console.log();
+
+//// Optional Arguements
+
+function squareOptional(x) {
+    return x * x;
+}
+
+console.log(squareOptional(4, true, "hedgehog")); 
+// ignores extra argument based on the given parameters of the function
+
+console.log();
+
+function minus(a, b) {
+    // if(b === undefined) {
+    //     return -a;
+    // } else {
+    //     return a - b;
+    // }
+    
+    // shorthand
+    if(b === undefined) return -a;
+    else return a - b;
+}
+
+console.log(minus(10)); // -10
+console.log(minus(10, 5)); // 5
+
+console.log();
+
+function powerOptional(base, exponent = 2) {
+    let result = 1;
+    let count = 0;
+    while(count < exponent) {
+        result *= base;
+        count++;
+    }
+
+    return result;
+}
+
+console.log(powerOptional(4)); // 16
+console.log(power(2, 6)); // 64
+
+console.log();
+
+console.log("C", "O", 2); // Rest parameters on page 74
+
+console.log();
+
+//// Closure
+
+function wrapValue(n) {
+    let local = n;
+    return() => local;
+}
+
+let wrap1 = wrapValue(1);
+let wrap2 = wrapValue(2);
+
+console.log(wrap1()); // 1
+console.log(wrap2()); // 2
+
+console.log();
+
+function multiplier(factor) {
+    return number => number * factor;
+}
+
+let twice = multiplier(2);
+console.log(twice(5)); // 10;
