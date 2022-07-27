@@ -285,16 +285,21 @@ function findSolution(target) {
         } else if(current > target) {
             return null;
         } else {
-            // return find(current + 5, `(${history} + 5)`) ||
-            //         find(current * 3, `(${history} * 3)`);
+            // template literal solution
+            return find(current + 5, `(${history} + 5)`) ||
+                    find(current * 3, `(${history} * 3)`);
 
-            return find(current + 5, history + "5") || find(current * 3, history + "* 3");
+            // // non-template literal
+            // return find(current + 5, "(" + history + " + 5)") ||
+            //         find(current * 3, "(" + history + " * 3)");
         }
     }
     return find(1, "1");
 }
 
+
 console.log(findSolution(24)); // (((1 * 3) + 5) * 3)
+
 
 // // emphasis
 // find(1, "1")
