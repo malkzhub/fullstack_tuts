@@ -625,3 +625,52 @@ function sum(array) {
 console.log(range(1, 10));
 console.log(range(5, 2, -1));
 console.log(sum(range(1, 10)));
+
+
+console.log();
+
+
+//// ###### Reversing an Array
+
+// Arrays have a reverse method that changes the array by inverting the
+// order in which its elements appear. For this exercise, write two
+// functions, reverseArray and reverseArrayInPlace. The first, reverseArray,
+// takes an array as argument and produces a new array that has the same
+// elements in the inverse order. The second, reverseArrayInPlace, does
+// what the reverse method does: it modifies the array given as argument by
+// reversing its elements. Neither may use the standard reverse method.
+// Thinking back to the notes about side effects and pure functions in
+// “Functions and Side Effects” on page 54, which variant do you expect to
+// be useful in more situations? Which one runs faster?
+
+function reverseArray(array) {
+    let output = [];
+    let i = array.length - 1;
+
+    do {
+        output.push(array[i]);
+        i--;
+    } while(i >= 0);
+
+    return output;
+}
+
+function reverseArrayInPlace(array) {
+    let i = 0;
+    while(i < Math.floor(array.length / 2)) {
+        let old = array[i];
+        array[i] = array[array.length - 1 - i];
+        array[array.length - 1 - i] = old;
+        i++;
+    }
+    return array;
+}
+
+
+console.log(reverseArray(["A", "B", "C"]));
+// ["C", "B", "A"]
+
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+// [5, 4, 3, 2, 1]
