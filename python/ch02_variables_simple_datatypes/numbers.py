@@ -62,7 +62,7 @@ print(MAX_CONNECTIONS) # 5000
 
 
 ########################
-#### TRY IT YOURSEF ####
+#### TRY IT YOURSELF ####
 ########################
 
 # 2-8. Number Eight: Write addition, subtraction,

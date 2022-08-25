@@ -139,3 +139,5 @@ print(f"\n{try_name}")
 print(try_name.strip())
 print(try_name.lstrip())
 print(try_name.rstrip())
+
+
