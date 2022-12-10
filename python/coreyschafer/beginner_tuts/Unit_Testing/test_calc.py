@@ -37,8 +37,12 @@ class TestCalc(unittest.TestCase):
 
         ## Testing Dividing by zero raises the correct error (Start again at 16:00 Corey Schafer YT)
 
-        ## First Way
-        self.assertRaises(ValueError, calc.divide, 10, 0)
+        # ## First Way
+        # self.assertRaises(ValueError, calc.divide, 10, 0)
+
+        ## Second Way - Using Context Manager
+        with self.assertRaises(ValueError):
+            calc.divide(10, 0)
 
 
 ## script in order not to run python -m unittest file.py in terminal
