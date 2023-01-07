@@ -21,6 +21,7 @@ urlpatterns = [
 
     # proj
     path('', include('main.urls')),
+   
 ]
 
 
