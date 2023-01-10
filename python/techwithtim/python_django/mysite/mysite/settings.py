@@ -61,6 +61,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # Default - 'DIRS': []
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -118,7 +119,8 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# Default is USE_TZ = False
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
