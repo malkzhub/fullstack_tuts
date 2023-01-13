@@ -1,0 +1,49 @@
+{% extends 'app_test/base.html' %}
+
+{% block title %} Application - List {% endblock %}
+
+{% block content%}
+
+    <h1>{{ blog.title }}</h1>
+
+    <hr>
+
+    {% for i in blog.blogcontent_set.all %}
+        <div class="fill" style="margin-bottom: 4em;">
+            <p>{{ i.content }}</p>
+
+            <hr>
+
+            <small>Written By: <i>{{ i.author }}</i></small>
+            <hr>
+        </div>
+
+
+        <div class="all">
+            <ul>
+                {% if i.complete == True %}
+                    <li>{{ i.author }} - Blog Finished</li>
+                {% else %}
+                    <li>{{ i.author }} - Unfinished Blog</li>
+                {% endif %}
+            </ul>
+        </div>
+    {% endfor %}
+
+
+    <div class="all">
+        <h3>All Authors</h3>
+
+        {% for y in blog.blogcontent_set.all %}
+                <ul>
+                    {% if y.complete == True %}
+                        <li>{{ y.author }} - Blog Finished</li>
+                    {% else %}
+                        <li>{{ y.author }} - Unfinished Blog</li>
+                    {% endif %}
+                </ul>
+            
+        {% endfor %}
+    </div>
+
+{% endblock %}
