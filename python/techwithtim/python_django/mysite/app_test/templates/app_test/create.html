@@ -1,0 +1,16 @@
+{% extends 'app_test/base.html' %}
+{% block title %} Application - Create {% endblock %}
+
+
+{% block content %}
+
+    Create Page
+
+    <form action="/app_test/create/" method="post">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        <button type="submit" name="save">Create New</button>
+    </form>
+
+{% endblock %}

@@ -13,5 +13,6 @@ from . import views
 ''' Using Templates '''
 urlpatterns =[
     path('', views.home, name='home'),
-    path('blog/<int:id>', views.blog, name='blog')
+    path('blog/<int:id>', views.blog, name='blog'),
+    path('create/', views.create, name='create'),
 ]

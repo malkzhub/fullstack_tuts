@@ -1,0 +1,45 @@
+{% extends 'app_test/base.html' %}
+
+{% block title %} Application - List {% endblock %}
+
+{% block content%}
+
+    <h1>{{ blog.title }}</h1>
+
+    <hr>
+
+    {% for i in blog.blogcontent_set.all %}
+        <div class="fill" style="margin-bottom: 4em;">
+            <p>{{ i.content }}</p>
+
+            <hr>
+
+            <small>Written By: <i>{{ i.author }}</i></small>
+            <hr>
+        </div>
+    {% endfor %}
+
+    <form action="#" method="post">
+        {% csrf_token %}
+
+        <div class="all">
+            <h3>Authors</h3>
+
+            {% for y in blog.blogcontent_set.all %}
+                    <ul>
+                        {% if y.complete == True %}
+                            <li><input type="checkbox" name="{{ y.id }}" id="{{ y.id }}" value="clicked" checked>{{ y.author }}</li>
+                        {% else %}
+                        <li><input type="checkbox" name="{{ y.id }}" id="{{ y.id }}" value="clicked">{{ y.author }}</li>
+                        {% endif %}
+                    </ul>
+            {% endfor %}
+
+            <button type="submit" name="save" value="save">Save</button>
+            <input type="text" name="authorName" id="authorName">
+            <button type="submit" name="newAuthor" value="newAuthor">Add Author</button>
+        </div>
+
+    </form>
+
+{% endblock %}
