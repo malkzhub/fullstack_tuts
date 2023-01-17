@@ -5,18 +5,22 @@
 
 {% block content %}
 
-Create Page
+<h3>Create Page</h3>
 
-<form action="/create/" method="post">
+<form action="/create/" method="post" class="form-group">
     {% csrf_token %}
 
-    <!-- Types of default forms in Django -->
-    <!-- {{ form.as_table }}
-    {{ form.as_p }}
-    {{ form.as_ul }} -->
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button type="submit" name="save" class="btn btn-success">Create New</button>
+        </div>
+        {{ form.name }}
+    </div>
 
-    {{ form.as_p }}
-    <button type="submit" name="save">Create New</button>
+  
+
+    
+    
 </form>
 
 
