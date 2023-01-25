@@ -10,5 +10,5 @@ from .views import RoomView
 # ]
 
 urlpatterns = [
-    path('roomgi/', RoomView.as_view()),
+    path('room/', RoomView.as_view()),
 ]
